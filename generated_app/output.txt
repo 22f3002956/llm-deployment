@@ -1,0 +1,11 @@
+```json
+{
+    "index.html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <title>Hello IIT Madras</title>\n</head>\n<body>\n    <div class=\"container\">\n        <h1>Hello IIT Madras</h1>\n        <button id=\"changeColorBtn\">Change Background Color</button>\n    </div>\n    <script src=\"app.js\"></script>\n</body>\n</html>",
+    
+    "app.js": "document.getElementById('changeColorBtn').addEventListener('click', function() {\n    document.body.style.backgroundColor = getRandomColor();\n});\n\nfunction getRandomColor() {\n    const letters = '0123456789ABCDEF';\n    let color = '#';\n    for (let i = 0; i < 6; i++) {\n        color += letters[Math.floor(Math.random() * 16)];\n    }\n    return color;\n}",
+
+    "style.css": "body {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100vh;\n    margin: 0;\n    font-family: Arial, sans-serif;\n}\n\n.container {\n    text-align: center;\n}",
+
+    "README.md": "# Hello IIT Madras Web App\n\nThis is a simple web application that displays the message \"Hello IIT Madras\" and changes the background color upon clicking a button.\n\n## Files\n- `index.html`: The main HTML file that contains the structure of the webpage.\n- `app.js`: JavaScript file that adds interactivity to the webpage by changing the background color.\n- `style.css`: Stylesheet that sets the basic styling for the webpage.\n\n## How It Works\n1. Open the `index.html` file in a web browser.\n2. You will see the message \"Hello IIT Madras\" and a button below it.\n3. Click the button to change the background color of the page randomly.\n\n## Usage\nSimply open the `index.html` file in your preferred web browser to run the application."
+}
+```

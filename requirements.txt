@@ -1,0 +1,4 @@
+flask
+requests
+PyGithub
+python-dotenv

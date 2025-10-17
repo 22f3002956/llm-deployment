@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI App Generator</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ AI App Generator Console</h1>
+
+    <input id="project-name" placeholder="Project name (e.g., my-portfolio)" />
+    <textarea id="brief" placeholder="Enter your app brief..."></textarea>
+
+    <button id="generate">Generate & Deploy</button>
+
+    <div id="loader" class="hidden">⏳ Generating and Deploying...</div>
+    <pre id="console"></pre>
+
+    <a id="result-link" href="#" target="_blank"></a>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

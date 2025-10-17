@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Gallery</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Project Gallery</h1>
+    <p>View, open, or delete your deployed projects.</p>
+
+    <div class="gallery">
+      {% for project in projects %}
+      <div class="card">
+        <h3>{{ project.name }}</h3>
+        <a href="{{ project.url }}" target="_blank">🌐 Open Project</a>
+        <button class="delete-btn" onclick="deleteProject('{{ project.name }}')">🗑️ Delete</button>
+      </div>
+      {% else %}
+      <p>No projects found. Generate one!</p>
+      {% endfor %}
+    </div>
+
+    <a href="/" class="back">← Back to Dashboard</a>
+  </div>
+
+  <script>
+    async function deleteProject(name) {
+      if (!confirm(`Delete project '${name}'?`)) return;
+      const res = await fetch("/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secret: "mysecret123", project_name: name })
+      });
+      const data = await res.json();
+      alert(data.message || "Deleted");
+      location.reload();
+    }
+  </script>
+</body>
+</html>
